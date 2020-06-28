@@ -917,6 +917,7 @@ static void IdentifyVersion(void)
 #ifdef USE_PATCH_KART
 	D_AddFile(va(pandf,srb2waddir,"patch.kart"), startupwadfiles);
 #endif
+	D_AddFile(va(pandf, srb2waddir, "birdhouse.kart"), startupwadfiles);
 
 #if !defined (HAVE_SDL) || defined (HAVE_MIXER)
 #define MUSICTEST(str) \
@@ -1224,6 +1225,7 @@ void D_SRB2Main(void)
 #ifdef USE_PATCH_KART
 	mainwads++; W_VerifyFileMD5(mainwads, ASSET_HASH_PATCH_KART);		// patch.kart
 #endif
+	mainwads++;	W_VerifyFileMD5(mainwads, ASSET_HASH_BIRDHOUSE_KART); // birdhouse.kart
 #else
 #ifdef USE_PATCH_DTA
 	mainwads++;	// patch.dta

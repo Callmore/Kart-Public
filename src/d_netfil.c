@@ -811,6 +811,7 @@ void Got_Filetxpak(void)
 		&& strcmp(filename, "sounds.kart")
 		&& strcmp(filename, "music.kart")
 		&& strcmp(filename, "patch.kart")
+		&& strcmp(filename, "birdhouse.kart")
 		))
 		I_Error("Tried to download \"%s\"", filename);
 
