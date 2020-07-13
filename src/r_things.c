@@ -2602,6 +2602,8 @@ void R_InitSkins(void)
 	numskins = 1;
 	Sk_SetDefaultValue(skin);
 
+	memset(skinstats, 0, sizeof(skinstats));
+
 	// Hardcoded S_SKIN customizations for Sonic.
 	strcpy(skin->name,       DEFAULTSKIN);
 #ifdef SKINVALUES
