@@ -153,10 +153,10 @@ extern char  logfilename[1024];
 // most interface strings are ignored in development mode.
 // we use comprevision and compbranch instead.
 #else
-#define VERSION    1 // Game version
-#define SUBVERSION 2 // more precise version number
-#define VERSIONSTRING "v1.2"
-#define VERSIONSTRINGW L"v1.2"
+#define VERSION    0 // Game version
+#define SUBVERSION 1 // more precise version number
+#define VERSIONSTRING "v0.1 - Skin limit increase"
+#define VERSIONSTRINGW L"v0.1 - Skin limit increase"
 // Hey! If you change this, add 1 to the MODVERSION below! Otherwise we can't force updates!
 // And change CMakeLists.txt, for CMake users!
 // AND appveyor.yml, for the build bots!
@@ -252,7 +252,7 @@ extern char  logfilename[1024];
 // NOTE: it needs more than this to increase the number of players...
 
 #define MAXPLAYERS 16
-#define MAXSKINS 128
+#define MAXSKINS 1024 //512 //128
 #define PLAYERSMASK (MAXPLAYERS-1)
 #define MAXPLAYERNAME 21
 

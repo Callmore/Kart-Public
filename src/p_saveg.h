@@ -31,8 +31,8 @@ mobj_t *P_FindNewPosition(UINT32 oldposition);
 typedef struct
 {
 	UINT8 skincolor;
-	UINT8 skin;
-	UINT8 botskin;
+	INT32 skin;
+	INT32 botskin;
 	UINT8 botcolor;
 	INT32 score;
 	INT32 lives;

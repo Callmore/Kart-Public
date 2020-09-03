@@ -3368,7 +3368,7 @@ void M_Ticker(void)
 //
 void M_Init(void)
 {
-	UINT8 i;
+	INT32 i;
 
 	COM_AddCommand("manual", Command_Manual_f);
 
@@ -3441,7 +3441,7 @@ void M_Init(void)
 
 void M_InitCharacterTables(void)
 {
-	UINT8 i;
+	INT32 i;
 
 	// Setup PlayerMenu table
 	for (i = 0; i < MAXSKINS; i++)
@@ -8925,7 +8925,7 @@ Update the maxplayers label...
 #define iconwidth 32
 #define spacingwidth 32
 #define incrwidth (iconwidth + spacingwidth)
-		UINT8 i = 0, pskin, pcol;
+		INT32 i = 0, pskin, pcol;
 		// player arrangement width, but there's also a chance i'm a furry, shhhhhh
 		const INT32 paw = iconwidth + 3*incrwidth;
 		INT32 trans = 0;
@@ -8955,7 +8955,7 @@ Update the maxplayers label...
 					break;
 			}
 
-			if (pskin >= MAXSKINS)
+			if (pskin >= MAXSKINS || pskin == -1) // this statement is stupid thanks bye
 				pskin = 0;
 
 			if (!trans && i > cv_splitplayers.value)
@@ -9193,7 +9193,7 @@ static void M_DrawSetupMultiPlayerMenu(void)
 	UINT8 frame;
 	UINT8 speed;
 	UINT8 weight;
-	UINT8 i;
+	INT32 i;
 	const UINT8 *flashcol = V_GetStringColormap(highlightflags);
 	INT32 statx, staty;
 
@@ -9308,7 +9308,7 @@ static void M_DrawSetupMultiPlayerMenu(void)
 	{
 		const INT32 icons = 4;
 		INT32 k = -icons;
-		INT16 col = setupm_fakeskin - icons;
+		INT32 col = setupm_fakeskin - icons;
 		INT32 x = BASEVIDWIDTH/2 - ((icons+1)*24) - 4;
 		fixed_t scale = FRACUNIT/2;
 		INT32 offx = 8, offy = 8;
