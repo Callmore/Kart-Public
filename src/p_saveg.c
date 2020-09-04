@@ -77,7 +77,7 @@ static inline void P_ArchivePlayer(void)
 
 	if (botskin)
 	{
-		WRITEUINT8(save_p, botskin);
+		WRITEINT32(save_p, botskin);
 		WRITEUINT8(save_p, botcolor);
 	}
 }
@@ -88,7 +88,7 @@ static inline void P_ArchivePlayer(void)
 static inline void P_UnArchivePlayer(void)
 {
 	savedata.skincolor = READUINT8(save_p);
-	savedata.skin = READUINT8(save_p);
+	savedata.skin = READINT32(save_p);
 
 	savedata.score = READINT32(save_p);
 	savedata.lives = READINT32(save_p);
@@ -96,7 +96,7 @@ static inline void P_UnArchivePlayer(void)
 
 	if (savedata.botcolor)
 	{
-		savedata.botskin = READUINT8(save_p);
+		savedata.botskin = READINT32(save_p);
 		if (savedata.botskin-1 >= numskins)
 			savedata.botskin = 0;
 		savedata.botcolor = READUINT8(save_p);

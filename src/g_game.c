@@ -56,7 +56,7 @@ gamestate_t gamestate = GS_NULL;
 UINT8 ultimatemode = false;
 
 boolean botingame;
-UINT8 botskin;
+INT32 botskin; // gonna update this just in-case
 UINT8 botcolor;
 
 JoyType_t Joystick;
@@ -7029,7 +7029,7 @@ void G_LoadDemoInfo(menudemo_t *pdemo)
 		// Skin
 		M_Memcpy(temp,extrainfo_p,16);
 		extrainfo_p += 16;
-		pdemo->standings[count].skin = UINT8_MAX;
+		pdemo->standings[count].skin = INT32_MAX;
 		for (i = 0; i < numskins; i++)
 			if (stricmp(skins[i].name, temp) == 0)
 			{
